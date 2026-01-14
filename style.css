@@ -1,15 +1,17 @@
 :root {
-    --primary-color: #2563eb;
-    --success-color: #059669;
-    --danger-color: #dc2626;
-    --bg-color: #f8fafc;
+    --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    --accent-color: #fbbf24; /* Gold/Amber - Melambangkan kecemerlangan */
     --card-bg: #ffffff;
+    --text-main: #1e293b;
+    --text-muted: #64748b;
+    --success: #10b981;
+    --danger: #ef4444;
 }
 
 body {
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
-    background-color: var(--bg-color);
-    color: #1e293b;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg-gradient);
+    color: var(--text-main);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -19,101 +21,121 @@ body {
 
 .container {
     background: var(--card-bg);
-    padding: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
     width: 100%;
-    max-width: 500px;
+    max-width: 550px;
+    border-top: 6px solid var(--accent-color); /* Garis emas di atas */
 }
 
 h2 {
     margin-top: 0;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     color: #0f172a;
-    border-bottom: 2px solid #e2e8f0;
-    padding-bottom: 10px;
+    text-align: center;
+    letter-spacing: -0.5px;
+    margin-bottom: 1.5rem;
 }
 
 .input-section {
     display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 10px;
-    margin: 20px 0;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    background: #f8fafc;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 25px;
 }
 
 input {
-    padding: 10px;
-    border: 1px solid #cbd5e1;
-    border-radius: 6px;
-    outline: none;
-    transition: border 0.2s;
+    padding: 12px;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
 }
 
 input:focus {
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    border-color: var(--accent-color);
+    outline: none;
+    background: #fff;
 }
 
 button {
-    background-color: var(--primary-color);
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 6px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: opacity 0.2s;
     grid-column: span 2;
+    background: #0f172a; /* Warna gelap bijak */
+    color: var(--accent-color); /* Tulisan emas */
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
 }
 
 button:hover {
-    opacity: 0.9;
+    background: #1e293b;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
 table {
     width: 100%;
-    margin-top: 20px;
-    border-spacing: 0;
+    border-collapse: separate;
+    border-spacing: 0 8px;
 }
 
 th {
-    text-align: left;
-    background: #f1f5f9;
     padding: 12px;
-    font-size: 0.875rem;
+    color: var(--text-muted);
+    font-size: 0.8rem;
     text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 td {
-    padding: 12px;
-    border-bottom: 1px solid #e2e8f0;
+    padding: 15px;
+    background: #fff;
+    border-top: 1px solid #f1f5f9;
+    border-bottom: 1px solid #f1f5f9;
 }
 
+tr td:first-child { border-left: 1px solid #f1f5f9; border-radius: 8px 0 0 8px; font-weight: 600; }
+tr td:last-child { border-right: 1px solid #f1f5f9; border-radius: 0 8px 8px 0; }
+
 .result-section {
-    margin-top: 20px;
-    padding: 15px;
-    background: #f1f5f9;
-    border-radius: 8px;
+    margin-top: 30px;
+    padding: 20px;
+    background: #0f172a;
+    color: white;
+    border-radius: 12px;
+    text-align: center;
 }
 
 .result-section p {
-    margin: 5px 0;
-    display: flex;
-    justify-content: space-between;
+    font-size: 1.1rem;
+    margin: 8px 0;
 }
 
-#averageScore, #finalStatus {
-    font-weight: bold;
-    color: var(--primary-color);
+#averageScore {
+    color: var(--accent-color);
+    font-size: 1.5rem;
+    font-weight: 800;
 }
 
 .clear-btn {
-    background-color: transparent;
-    color: var(--danger-color);
-    border: 1px solid var(--danger-color);
+    background: transparent;
+    color: #94a3b8;
+    border: 1px solid #475569;
     margin-top: 15px;
+    font-size: 0.8rem;
+    padding: 8px;
 }
 
 .clear-btn:hover {
-    background-color: #fef2f2;
+    color: var(--danger);
+    border-color: var(--danger);
 }
